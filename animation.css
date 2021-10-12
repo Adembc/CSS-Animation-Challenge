@@ -1,0 +1,187 @@
+ *{
+    box-sizing: border-box;
+    margin : 0 ; 
+} 
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    min-height: 70vh;
+    min-width: 570px;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(8,60px);  
+    grid-template-rows: repeat(7,60px); 
+
+}
+span{
+    background-color: #000;
+}
+.s1{
+    grid-row: 2/ span 5 ;
+   
+
+}
+.s2{
+    grid-column: span 4;
+    position: relative;
+}
+.s2::before{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    position: absolute;
+    top : 10px ;
+    right : 10px;
+    animation-name: maze;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    
+}
+
+.s3{
+grid-row: 4/5;
+grid-column: 2/span 3;
+}
+.s4{
+    grid-row: 7/8;
+    grid-column: span 4;
+}
+.s5{
+    grid-row: span 6;
+    grid-column: 5/6;
+    transform: translateX(30px);
+}
+.s6{
+    grid-row: 7/8;
+    grid-column: 5/-1;
+    transform: translateX(30px);
+    position: relative;
+}
+.s6::before{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    position: absolute;
+    top : 10px ;
+    right : 10px;
+    animation-name: maze2;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite ;
+    animation-delay :2s
+   
+}
+@keyframes maze{
+    
+    5%{
+        transform: translateX(-180px);
+    }
+    10%{
+        transform: 
+         translateX(-180px) 
+         translateY(180px);
+    }
+    15%{
+        transform: translateX(-180px) translateY(180px) translateX(180px);
+    }
+    20%{
+        transform: 
+        translateX(-180px)
+        translateY(180px)
+        translateX(180px)
+        translateX(-180px);
+    }
+    25%{
+        transform:
+         translateX(-180px)
+         translateY(180px)
+         translateX(180px)
+         translateX(-180px)
+         translateY(180px);
+    }
+    30%{
+        transform:
+         translateX(-180px)
+         translateY(180px) 
+         translateX(180px) 
+         translateX(-180px)
+         translateY(180px)
+         translateX(180px);
+    }
+    35%{
+        transform: 
+        translateX(-180px)
+         translateY(180px)
+         translateX(180px)
+         translateX(-180px)
+         translateY(180px) 
+         translateX(180px)
+         translateX(-180px);
+    }
+    45%{
+        transform:
+        translateX(-180px)
+         translateY(180px)
+         translateX(180px)
+         translateX(-180px)
+         translateY(180px) 
+         translateX(180px)
+         translateX(-180px)
+         translateY(-360px);
+    }
+    50%{
+        transform:
+        translateX(-180px)
+        translateY(180px)
+        translateX(180px)
+        translateX(-180px)
+        translateY(180px) 
+        translateX(180px)
+        translateX(-180px)
+        translateY(-360px)
+        translateX(180px);
+    }
+}
+@keyframes maze2{
+    
+    10%{
+        background-color: orange;
+    }
+    20%{
+        transform: translateX(-180px);
+        background-color: orange;
+    }
+    50%{
+        transform:
+         translateX(-180px)
+         translateY(-360px) ;
+         background-color: orange;
+    }
+    60%{
+        transform:
+        translateX(-180px)
+        translateY(-360px) ;
+        background-color: #000;
+    }
+    80%{
+        transform:
+        translateX(-180px)
+        translateY(-360px) 
+        translateY(360px) ;
+    }
+    100%{
+        transform:
+        translateX(-180px)
+        translateY(-360px) 
+        translateY(360px) 
+        translateX(180px)
+    }
+    }
+
